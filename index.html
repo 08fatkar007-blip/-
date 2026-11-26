@@ -1,62 +1,89 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Карим Фатхутдинов — сайты для небольшого бизнеса</title>
-<meta name="description" content="Веб-разработчик-фрилансер: делаю понятные и быстрые сайты-визитки и лендинги для небольшого бизнеса.">
+<title>Фатхутдинов Карим Арсенович — сайт-визитка</title>
+<meta name="description" content="Сайт-визитка студента ГУАП: направление 09.03.03 «Прикладная информатика», программа «Прикладной искусственный интеллект и наука о данных».">
+<meta name="theme-color" content="#12303b">
 <style>
-:root{--ink:#12303b;--paper:#eef3f4;--sea:#2a7f8e;--lemon:#f2c94c;--white:#fff;--line:#c9d6d9;--err:#b3261e}
+:root{--ink:#12303b;--paper:#eef3f4;--sea:#256d79;--lemon:#f2c94c;--white:#fff;--line:#c9d6d9;--muted:#44606a;--err:#b3261e}
 *{box-sizing:border-box}
-html{scroll-padding-top:72px}
+html{scroll-padding-top:80px}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;margin:0 0 .6em}
-h1{font-size:clamp(2.1rem,5.5vw,3.6rem);letter-spacing:-.01em}
+h1{font-size:clamp(2rem,5vw,3.3rem);letter-spacing:-.01em}
 h2{font-size:clamp(1.6rem,3.4vw,2.2rem)}
+h3{font-size:1.15rem;margin-bottom:.4em}
+p{margin:0 0 1em}
 a{color:var(--sea)}
 :focus-visible{outline:3px solid var(--lemon);outline-offset:2px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 section{padding:72px 0}
+.skip{position:absolute;left:-9999px;top:0;background:var(--lemon);color:var(--ink);padding:10px 16px;z-index:100;font-weight:700}
+.skip:focus{left:12px;top:12px}
 /* меню */
 header{position:sticky;top:0;z-index:10;background:var(--ink);color:var(--white)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:60px}
-.logo{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none;font-family:Georgia,serif;font-weight:700}
-.logo svg{width:28px;height:28px}
-nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
-nav a{display:block;padding:8px 14px;color:var(--white);text-decoration:none;border-radius:6px}
+header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:60px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none;font-family:Georgia,serif;font-weight:700;white-space:nowrap}
+.logo svg{width:28px;height:28px;flex:none}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:8px 12px;color:var(--white);text-decoration:none;border-radius:6px;font-size:.98rem}
 nav a:hover{background:rgba(255,255,255,.14)}
 .burger{display:none;background:none;border:2px solid var(--white);color:var(--white);border-radius:6px;padding:6px 12px;font:inherit;cursor:pointer}
 /* главная */
 .hero{padding-top:56px}
 .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
-.hero p{font-size:1.15rem;max-width:34em}
-.btn{display:inline-block;background:var(--lemon);color:var(--ink);font-weight:700;padding:13px 24px;border-radius:8px;text-decoration:none;border:0;font-size:1rem;cursor:pointer;font-family:inherit}
-.btn:hover{background:#e6bb34}
+.eyebrow{margin:0 0 10px;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sea)}
+.hero .lead{font-size:1.12rem;max-width:36em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{display:inline-block;background:var(--lemon);color:var(--ink);font-weight:700;padding:13px 24px;border-radius:8px;text-decoration:none;border:2px solid var(--lemon);font-size:1rem;cursor:pointer;font-family:inherit}
+.btn:hover{background:#e6bb34;border-color:#e6bb34}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--white)}
 .photo{width:100%;max-width:380px;aspect-ratio:1;object-fit:cover;border-radius:24px 24px 24px 120px;background:var(--line);justify-self:end;display:block}
-/* обо мне */
+/* карточки и списки */
 #about{background:var(--white)}
-#about .wrap{max-width:760px}
-.facts{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none;margin:24px 0 0}
-.facts li{border:2px solid var(--ink);border-radius:999px;padding:4px 16px;font-size:.95rem}
-/* галерея */
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin:0;padding:0}
-.gallery figure{margin:0;background:var(--white);border:2px solid var(--ink);border-radius:12px;overflow:hidden}
-.gallery svg{display:block;width:100%;height:auto}
-.gallery figcaption{padding:12px 16px;border-top:2px solid var(--ink)}
-.gallery strong{display:block}
-.gallery span{font-size:.92rem;color:#44606a}
+.facts-dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px;margin:26px 0 0;padding:0}
+.facts-dl div{border-left:3px solid var(--lemon);padding-left:14px}
+.facts-dl dt{font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700}
+.facts-dl dd{margin:2px 0 0;font-weight:600}
+.grid{display:grid;gap:20px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--white);border:2px solid var(--ink);border-radius:12px;padding:20px}
+.card p:last-child{margin-bottom:0}
+.card .num{display:inline-block;font-family:Georgia,serif;color:var(--sea);font-weight:700;font-size:1.5rem;line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 22px;padding:0}
+.chips li{border:2px solid var(--ink);border-radius:999px;padding:4px 14px;font-size:.92rem;background:var(--white)}
+.chips.outline li{border-style:dashed;background:transparent;color:var(--muted)}
+.subhead{margin-top:26px}
+/* проекты */
+.project{background:var(--white);border:2px solid var(--ink);border-radius:12px;padding:20px;margin:0 0 16px}
+.project h3{margin-bottom:.2em}
+.project .tech{font-size:.88rem;color:var(--muted);margin:0 0 10px}
+.project .links{display:flex;flex-wrap:wrap;gap:14px;font-weight:600}
+/* планы */
+.timeline{list-style:none;margin:24px 0 0;padding:0;border-left:3px solid var(--line)}
+.timeline li{position:relative;padding:0 0 24px 26px}
+.timeline li::before{content:"";position:absolute;left:-9px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--lemon);border:3px solid var(--white);box-shadow:0 0 0 2px var(--ink)}
+.timeline .when{display:block;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sea);margin-bottom:2px}
+.timeline p{margin:0}
+.note{background:#fff8e1;border:2px dashed var(--lemon);border-radius:10px;padding:14px 16px;margin-top:24px;font-size:.95rem}
 /* контакты */
 #contacts{background:var(--ink);color:var(--white)}
 #contacts a{color:var(--lemon)}
-#contacts .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
-.contact-list{list-style:none;padding:0;margin:0;font-size:1.1rem}
-.contact-list li{margin-bottom:10px}
+#contacts .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+.contact-list{list-style:none;padding:0;margin:0;font-size:1.05rem}
+.contact-list li{margin-bottom:12px}
+.contact-list .k{display:block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#9fb6bd;font-weight:700}
 form{display:grid;gap:14px}
 label{display:grid;gap:6px;font-weight:600}
-input,textarea{font:inherit;padding:11px 13px;border-radius:8px;border:2px solid transparent;width:100%;color:var(--ink)}
-textarea{min-height:120px;resize:vertical}
-input[aria-invalid="true"]{border-color:#ff8a80}
+input,textarea{font:inherit;padding:11px 13px;border-radius:8px;border:2px solid transparent;width:100%;color:var(--ink);background:var(--white)}
+textarea{min-height:110px;resize:vertical}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#ff8a80}
 .msg{min-height:1.4em;margin:0;font-weight:600}
 .msg.error{color:#ffb4ab}
 .msg.ok{color:var(--lemon)}
@@ -69,36 +96,23 @@ footer a{color:var(--white)}
 .social a:hover{border-color:var(--lemon)}
 .social svg{width:20px;height:20px;fill:var(--white)}
 /* адаптивность */
+@media (max-width:900px){
+ nav a{padding:8px 9px;font-size:.94rem}
+}
 @media (max-width:760px){
  section{padding:48px 0}
  .burger{display:block}
- nav{position:absolute;left:0;right:0;top:100%;background:var(--ink);display:none;padding:8px 20px 16px}
+ nav{position:absolute;left:0;right:0;top:100%;background:var(--ink);display:none;padding:8px 20px 16px;box-shadow:0 12px 24px rgba(0,0,0,.25)}
  nav.open{display:block}
  nav ul{flex-direction:column}
- .hero .wrap,#contacts .wrap,.gallery{grid-template-columns:1fr}
+ .hero .wrap,#contacts .wrap,.grid-2,.grid-3,.facts-dl{grid-template-columns:1fr}
  .photo{justify-self:start;max-width:280px}
 }
 </style>
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
- <defs>
-  <symbol id="m1" viewBox="0 0 320 200">
-   <rect width="320" height="200" fill="var(--bg)"/>
-   <rect width="320" height="22" fill="#12303b"/><circle cx="12" cy="11" r="4" fill="#f2c94c"/><circle cx="26" cy="11" r="4" fill="#fff" opacity=".6"/>
-   <rect x="20" y="52" width="130" height="16" rx="3" fill="var(--fg)"/><rect x="20" y="78" width="100" height="8" rx="3" fill="var(--fg)" opacity=".5"/><rect x="20" y="94" width="116" height="8" rx="3" fill="var(--fg)" opacity=".5"/>
-   <rect x="20" y="122" width="64" height="22" rx="5" fill="var(--ac)"/>
-   <rect x="180" y="40" width="120" height="130" rx="14" fill="var(--ac)"/><circle cx="240" cy="92" r="26" fill="var(--bg)" opacity=".85"/>
-  </symbol>
-  <symbol id="m2" viewBox="0 0 320 200">
-   <rect width="320" height="200" fill="var(--bg)"/>
-   <rect width="320" height="22" fill="#12303b"/><circle cx="12" cy="11" r="4" fill="#f2c94c"/><circle cx="26" cy="11" r="4" fill="#fff" opacity=".6"/>
-   <rect x="20" y="36" width="280" height="40" rx="6" fill="var(--fg)"/>
-   <rect x="20" y="90" width="84" height="84" rx="8" fill="var(--ac)"/><rect x="118" y="90" width="84" height="84" rx="8" fill="var(--ac)" opacity=".65"/><rect x="216" y="90" width="84" height="84" rx="8" fill="var(--ac)" opacity=".35"/>
-  </symbol>
- </defs>
-</svg>
+<a class="skip" href="#main">Перейти к содержанию</a>
 
 <header>
  <div class="wrap">
@@ -109,48 +123,160 @@ footer a{color:var(--white)}
   <button class="burger" type="button" aria-expanded="false" aria-controls="menu">Меню</button>
   <nav id="menu" aria-label="Основное меню">
    <ul>
-    <li><a href="#home">Главная</a></li>
-    <li><a href="#about">Обо мне</a></li>
-    <li><a href="#portfolio">Портфолио</a></li>
+    <li><a href="#about">О себе</a></li>
+    <li><a href="#program">Программа</a></li>
+    <li><a href="#plans">Планы</a></li>
+    <li><a href="#skills">Навыки</a></li>
+    <li><a href="#achievements">Достижения</a></li>
     <li><a href="#contacts">Контакты</a></li>
    </ul>
   </nav>
  </div>
 </header>
 
-<main>
+<main id="main">
 <section id="home" class="hero">
  <div class="wrap">
   <div>
-   <h1>Сайт, который открывается с телефона и сразу понятен</h1>
-   <p>Делаю сайты-визитки и лендинги для кофеен, мастерских и небольших команд. Без лишних блоков: кто вы, что предлагаете и как с вами связаться.</p>
-   <a class="btn" href="#contacts">Обсудить сайт</a>
+   <p class="eyebrow">ГУАП · группа 4618 · 1 курс</p>
+   <h1>Фатхутдинов Карим Арсенович</h1>
+   <p class="lead">Студент направления <strong>09.03.03 «Прикладная информатика»</strong>. Учусь на программе <strong>«Прикладной искусственный интеллект и наука о данных»</strong> и хочу разбираться в ИИ не как пользователь готовых сервисов, а изнутри — от данных и математики до работающих моделей.</p>
+   <div class="hero-actions">
+    <a class="btn" href="#program">О программе</a>
+    <a class="btn ghost" href="#contacts">Связаться</a>
+   </div>
   </div>
-  <img class="photo" id="photo" src="photo.jpg" alt="Фотография автора сайта" width="380" height="380">
+  <img class="photo" id="photo" src="photo.jpg" alt="Фатхутдинов Карим Арсенович" width="380" height="380">
  </div>
 </section>
 
 <section id="about">
  <div class="wrap">
-  <h2>Обо мне</h2>
-  <p>Я учусь на первом курсе и занимаюсь веб-разработкой: вручную верстаю страницы на HTML и CSS, добавляю небольшие скрипты и проверяю, как сайт выглядит на телефоне и на компьютере. Конструкторы вроде Tilda помогают быстро набросать структуру, но готовый шаблон я всегда переделываю: меняю тексты, сетку и цвета, чтобы страница не была похожа на сотни других.</p>
-  <p>Мне важно, чтобы посетитель за несколько секунд понял, чем вы занимаетесь, и мог позвонить или написать одним нажатием. Поэтому я пишу короткие тексты, оптимизирую картинки и проверяю форму обратной связи до публикации.</p>
-  <ul class="facts">
-   <li>HTML и CSS</li><li>Адаптивная вёрстка</li><li>Основы JavaScript</li><li>Работа с Docker</li>
-  </ul>
+  <h2>Кратко обо мне</h2>
+  <p>Меня зовут Карим, я первокурсник ГУАП. Интересуюсь искусственным интеллектом, анализом данных и веб-разработкой: собираю небольшие проекты на HTML, CSS и JavaScript, изучаю Python и постепенно разбираюсь в том, как устроены современные ИИ-сервисы. Мне нравится доводить идею до работающего результата, который можно открыть, показать и улучшить.</p>
+  <dl class="facts-dl">
+   <div><dt>ФИО</dt><dd>Фатхутдинов Карим Арсенович</dd></div>
+   <div><dt>Учебная группа</dt><dd>4618</dd></div>
+   <div><dt>Направление подготовки</dt><dd>09.03.03 «Прикладная информатика»</dd></div>
+   <div><dt>Образовательная программа</dt><dd>«Прикладной искусственный интеллект и наука о данных»</dd></div>
+   <div><dt>Университет</dt><dd>ГУАП, кафедра № 41</dd></div>
+   <div><dt>Курс</dt><dd>1 курс, 2026/2027 учебный год</dd></div>
+  </dl>
  </div>
 </section>
 
-<section id="portfolio">
+<section id="program">
  <div class="wrap">
-  <h2>Портфолио</h2>
-  <p>Учебные макеты: на них я отрабатываю сетку, цвета и мобильную версию.</p>
-  <div class="gallery">
-   <figure><svg viewBox="0 0 320 200" role="img" aria-label="Макет сайта кофейни" style="--bg:#f6e7d3;--fg:#4a2c1a;--ac:#b5651d"><use href="#m1"/></svg><figcaption><strong>Кофейня «Зерно»</strong><span>Лендинг с меню и картой проезда</span></figcaption></figure>
-   <figure><svg viewBox="0 0 320 200" role="img" aria-label="Макет сайта мастерской по ремонту техники" style="--bg:#dcecf0;--fg:#12303b;--ac:#2a7f8e"><use href="#m2"/></svg><figcaption><strong>Ремонт техники</strong><span>Услуги и цены в виде карточек</span></figcaption></figure>
-   <figure><svg viewBox="0 0 320 200" role="img" aria-label="Макет портфолио фотографа" style="--bg:#e6e3f3;--fg:#2b2358;--ac:#6a5acd"><use href="#m2"/></svg><figcaption><strong>Портфолио фотографа</strong><span>Галерея работ на CSS Grid</span></figcaption></figure>
-   <figure><svg viewBox="0 0 320 200" role="img" aria-label="Макет сайта учебной группы" style="--bg:#e3f1dc;--fg:#1f4a1a;--ac:#4c9a2a"><use href="#m1"/></svg><figcaption><strong>Учебная группа</strong><span>Расписание и новости группы</span></figcaption></figure>
+  <h2>Как я понимаю образовательную программу</h2>
+  <p>Для меня «Прикладной искусственный интеллект и наука о данных» — это программа на стыке трёх вещей: программирования, математики и работы с реальными данными. ИИ здесь изучают не как набор готовых инструментов, а как инженерную дисциплину: нужно понимать, откуда берутся данные, как их подготовить, какая модель подходит для задачи и как честно оценить результат.</p>
+  <div class="grid grid-3">
+   <article class="card">
+    <span class="num">01</span>
+    <h3>Данные и математика</h3>
+    <p>Статистика, вероятность, линейная алгебра и анализ данных — база, без которой модель превращается в «чёрный ящик».</p>
+   </article>
+   <article class="card">
+    <span class="num">02</span>
+    <h3>Машинное обучение</h3>
+    <p>Классические алгоритмы, нейронные сети и обработка естественного языка: от постановки задачи до обучения и проверки качества.</p>
+   </article>
+   <article class="card">
+    <span class="num">03</span>
+    <h3>ИИ в продукте</h3>
+    <p>Инженерия: Python, Git, Docker, API и облачные сервисы — чтобы модель не осталась в блокноте, а приносила пользу людям.</p>
+   </article>
   </div>
+
+  <h3 class="subhead">Почему я выбрал именно эту программу</h3>
+  <p>Интерес к технологиям появился у меня до университета: я собирал простые сайты, разбирался с Arduino и экспериментировал с играми и модами. Постепенно стало понятно, что мне интереснее не просто пользоваться программами, а понимать, как они устроены и как сделать их лучше. Программа ГУАП привлекла тем, что соединяет серьёзную инженерную базу с прикладными задачами ИИ: здесь учат не только «запускать модель», но и отвечать за данные, качество и пользу результата. Для меня это возможность попасть в профессию, которая будет востребована ещё много лет.</p>
+ </div>
+</section>
+
+<section id="plans">
+ <div class="wrap">
+  <h2>Профессиональные планы</h2>
+  <p>После университета я хочу работать в сфере искусственного интеллекта и анализа данных — ML-инженером или аналитиком данных в IT-компании. Мне интересны задачи, где нужно разобраться в данных, выбрать и обучить модель, проверить её на реальных примерах и встроить в продукт.</p>
+  <ol class="timeline">
+   <li>
+    <span class="when">1–2 курс</span>
+    <p>Закрепить Python и математику, освоить Git, Linux и Docker, сделать несколько учебных проектов по анализу данных и машинному обучению.</p>
+   </li>
+   <li>
+    <span class="when">3–4 курс</span>
+    <p>Пройти стажировку в IT-компании, поучаствовать в хакатонах и олимпиадах, собрать портфолио из реальных задач и определиться с узкой специализацией.</p>
+   </li>
+   <li>
+    <span class="when">После выпуска</span>
+    <p>Работать ML-инженером или аналитиком данных: готовить данные, обучать и оценивать модели, отвечать за качество и внедрение ИИ-решений.</p>
+   </li>
+   <li>
+    <span class="when">Перспектива</span>
+    <p>Вырасти до ведущего специалиста, который проектирует ИИ-системы целиком — от идеи и данных до продукта, которым пользуются люди.</p>
+   </li>
+  </ol>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="wrap">
+  <h2>Интересы и навыки в IT</h2>
+  <div class="grid grid-2">
+   <div>
+    <h3>Чем уже пользуюсь</h3>
+    <ul class="chips">
+     <li>HTML5</li><li>CSS3</li><li>JavaScript (ES2020)</li><li>Python (базовый)</li>
+     <li>Git и GitHub</li><li>Docker</li><li>GitHub Actions</li><li>Linux (базовые команды)</li>
+     <li>VS Code</li><li>PyCharm</li><li>PWA и Service Worker</li><li>Netlify Functions</li>
+    </ul>
+    <h3>Чему хочу научиться</h3>
+    <ul class="chips outline">
+     <li>Python для анализа данных</li><li>SQL</li><li>pandas и NumPy</li>
+     <li>машинное обучение</li><li>нейронные сети</li><li>MLOps</li>
+    </ul>
+    <p>Больше всего меня интересуют прикладные задачи: как с помощью данных и моделей автоматизировать рутину, находить закономерности и помогать людям принимать решения.</p>
+   </div>
+   <div>
+    <h3>Проекты</h3>
+    <article class="project">
+     <h3>«Шаги» — планировщик задач</h3>
+     <p class="tech">HTML5 · CSS3 · JavaScript ES2020 · PWA · Service Worker · localStorage · Netlify Functions · Claude и Gemini API</p>
+     <p>Веб-приложение, которое превращает большие дела в понятные шаги: процессы и шаблоны, доска, календарь, напоминания, итоги недели и ИИ-план по цели. Работает как сайт и как устанавливаемое PWA-приложение, в том числе офлайн.</p>
+     <p class="links"><a href="https://github.com/08fatkar007-blip/shagi">Репозиторий на GitHub</a></p>
+    </article>
+    <article class="project">
+     <h3>Этот сайт-визитка</h3>
+     <p class="tech">HTML5 · CSS3 · JavaScript · адаптивная вёрстка</p>
+     <p>Одностраничный сайт без фреймворков: семантическая разметка, доступность, мобильное меню и проверка формы.</p>
+     <p class="links"><a href="#about">Посмотреть разделы</a></p>
+    </article>
+    <article class="project">
+     <h3>Учебные работы</h3>
+     <p class="tech">Docker · Git · GitHub Actions · Arduino</p>
+     <p>Лабораторные по курсу «Информатика»: установка и работа с Docker, система контроля версий Git, сборка и автоматизация через GitHub Actions.</p>
+    </article>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="achievements">
+ <div class="wrap">
+  <h2>Достижения и участие в мероприятиях</h2>
+  <ul class="timeline">
+   <li>
+    <span class="when">2026</span>
+    <p>Разработал и опубликовал на GitHub приложение <strong>«Шаги»</strong> — PWA-планировщик с ИИ-планом по цели и работой офлайн.</p>
+   </li>
+   <li>
+    <span class="when">2026</span>
+    <p>Выполнил учебные проекты по курсу «Информатика»: контейнеризация в <strong>Docker</strong>, работа с <strong>Git</strong> и CI-сборка в <strong>GitHub Actions</strong>.</p>
+   </li>
+   <li>
+    <span class="when">2026–2027</span>
+    <p>Планирую участвовать в профильных олимпиадах, хакатонах и образовательных интенсивах по ИИ и анализу данных.</p>
+   </li>
+  </ul>
+  <p class="note">Профильных олимпиад и сертификатов у меня пока нет — я только начинаю путь в IT. Этот сайт и проект «Шаги» — первые шаги, и я планирую развиваться в направлении искусственного интеллекта и науки о данных.</p>
  </div>
 </section>
 
@@ -158,16 +284,24 @@ footer a{color:var(--white)}
  <div class="wrap">
   <div>
    <h2>Контакты</h2>
-   <p>Напишите, какой сайт нужен, и я отвечу в течение дня.</p>
+   <p>Открыт к стажировкам, учебным проектам и участию в хакатонах. Напишите — отвечу в течение дня.</p>
    <ul class="contact-list">
-    <li>Телефон: <a href="tel:+79655954655">+7 (965) 595-46-55</a></li>
-    <li>Почта: <a href="mailto:08fatkar007@gmail.com">08fatkar007@gmail.com</a></li>
+    <li><span class="k">Телефон</span><a href="tel:+79655954655">+7 (965) 595-46-55</a></li>
+    <li><span class="k">Почта</span><a href="mailto:08fatkar007@gmail.com">08fatkar007@gmail.com</a></li>
+    <li><span class="k">Telegram</span><a href="https://t.me/p1romo">@p1romo</a></li>
+    <li><span class="k">GitHub</span><a href="https://github.com/08fatkar007-blip">08fatkar007-blip</a></li>
    </ul>
   </div>
   <form id="form" novalidate>
-   <label>Имя <input type="text" id="name" name="name" autocomplete="name" required></label>
-   <label>Email <input type="email" id="email" name="email" autocomplete="email" required></label>
-   <label>Сообщение <textarea id="text" name="message" required></textarea></label>
+   <label for="name">Имя
+    <input type="text" id="name" name="name" autocomplete="name" required>
+   </label>
+   <label for="email">Email
+    <input type="email" id="email" name="email" autocomplete="email" required>
+   </label>
+   <label for="text">Сообщение
+    <textarea id="text" name="message" required></textarea>
+   </label>
    <button class="btn" type="submit">Отправить сообщение</button>
    <p class="msg" id="msg" role="status" aria-live="polite"></p>
   </form>
@@ -177,39 +311,50 @@ footer a{color:var(--white)}
 
 <footer>
  <div class="wrap">
-  <div>© 2026 Карим Фатхутдинов. Сайт создан в 2026 году.<br>
+  <div>© <span id="year">2026</span> Фатхутдинов Карим Арсенович · ГУАП, группа 4618<br>
    <a href="tel:+79655954655">+7 (965) 595-46-55</a> · <a href="mailto:08fatkar007@gmail.com">08fatkar007@gmail.com</a></div>
   <ul class="social">
-   <li><a href="https://t.me/p1romo" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.5 3.5L2.8 10.7c-.9.4-.9 1.1-.2 1.3l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.3 4.7 3.5c.9.5 1.5.2 1.7-.8L22.8 4.9c.3-1.3-.5-1.9-1.3-1.4zM8.6 13.2l9.7-6.1c.5-.3.9-.1.5.2l-8.1 7.3-.3 3.4-1.8-4.8z"/></svg></a></li>
-   <li><a href="https://github.com/username" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 016 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.100.8 2.200v3.300c0 .3.2.7.8.6A11.500 11.500 0 0023.500 12C23.500 5.700 18.300.5 12 .5z"/></svg></a></li>
-   <li><a href="https://vk.com/username" aria-label="ВКонтакте"><svg viewBox="0 0 24 24"><path d="M12.8 18.5C6.400 18.500 2.700 14.100 2.500 6.800h3.200c.1 5.400 2.500 7.700 4.400 8.200V6.800h3v4.700c1.900-.2 3.800-2.300 4.500-4.700h3c-.5 2.900-2.600 5-4.100 5.900 1.500.7 3.900 2.500 4.800 5.800h-3.300c-.7-2.200-2.400-3.900-4.900-4.100v4.100h-.4z"/></svg></a></li>
+   <li><a href="https://t.me/p1romo" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 3.5L2.8 10.7c-.9.4-.9 1.1-.2 1.3l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.3 4.7 3.5c.9.5 1.5.2 1.7-.8L22.8 4.9c.3-1.3-.5-1.9-1.3-1.4zM8.6 13.2l9.7-6.1c.5-.3.9-.1.5.2l-8.1 7.3-.3 3.4-1.8-4.8z"/></svg></a></li>
+   <li><a href="https://github.com/08fatkar007-blip" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 016 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0023.5 12C23.5 5.7 18.3.5 12 .5z"/></svg></a></li>
   </ul>
  </div>
 </footer>
 
 <script>
 (function(){
- // запасная картинка, пока не добавлен photo.jpg
+ // запасная картинка, если photo.jpg недоступна
  var img=document.getElementById('photo');
- img.onerror=function(){img.onerror=null;
-  img.src='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 380"><rect width="380" height="380" fill="#c9d6d9"/><circle cx="190" cy="150" r="62" fill="#2a7f8e"/><path d="M60 380c0-80 60-125 130-125s130 45 130 125z" fill="#12303b"/></svg>');};
+ if(img){img.onerror=function(){img.onerror=null;
+  img.src='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 380"><rect width="380" height="380" fill="#c9d6d9"/><circle cx="190" cy="150" r="62" fill="#2a7f8e"/><path d="M60 380c0-80 60-125 130-125s130 45 130 125z" fill="#12303b"/></svg>');};}
+
  // мобильное меню
  var btn=document.querySelector('.burger'),nav=document.getElementById('menu');
- btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
- nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
- // форма: проверка email и отправка через почтовую программу
+ if(btn&&nav){
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false');});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.focus();}});
+ }
+
+ // год в футере
+ var y=document.getElementById('year');if(y){y.textContent=new Date().getFullYear();}
+
+ // форма: проверка и отправка через почтовую программу
  var f=document.getElementById('form'),msg=document.getElementById('msg');
- function show(t,c){msg.textContent=t;msg.className='msg '+c;}
- f.addEventListener('submit',function(e){
-  e.preventDefault();
-  var n=f.name.value.trim(),m=f.email.value.trim(),t=f.message.value.trim();
-  [f.name,f.email,f.message].forEach(function(x){x.removeAttribute('aria-invalid');});
-  if(!n){f.name.setAttribute('aria-invalid','true');f.name.focus();return show('Введите ваше имя.','error');}
-  if(m.indexOf('@')<1||m.indexOf('@')===m.length-1){f.email.setAttribute('aria-invalid','true');f.email.focus();return show('Email должен содержать символ @, например name@mail.ru.','error');}
-  if(!t){f.message.setAttribute('aria-invalid','true');f.message.focus();return show('Напишите сообщение.','error');}
-  show('Готово, открываю почтовую программу с вашим сообщением.','ok');
-  location.href='mailto:08fatkar007@gmail.com?subject='+encodeURIComponent('Сообщение с сайта от '+n)+'&body='+encodeURIComponent(t+'\n\nОтвет отправить на: '+m);
- });
+ if(f&&msg){
+  function show(t,c){msg.textContent=t;msg.className='msg '+c;}
+  function field(n){return f.elements.namedItem(n);}
+  f.addEventListener('submit',function(e){
+   e.preventDefault();
+   var nameEl=field('name'),emailEl=field('email'),textEl=field('message');
+   var n=nameEl.value.trim(),m=emailEl.value.trim(),t=textEl.value.trim();
+   [nameEl,emailEl,textEl].forEach(function(x){x.removeAttribute('aria-invalid');});
+   if(!n){nameEl.setAttribute('aria-invalid','true');nameEl.focus();return show('Введите ваше имя.','error');}
+   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m)){emailEl.setAttribute('aria-invalid','true');emailEl.focus();return show('Введите email, например name@mail.ru.','error');}
+   if(!t){textEl.setAttribute('aria-invalid','true');textEl.focus();return show('Напишите сообщение.','error');}
+   show('Готово, открываю почтовую программу с вашим сообщением.','ok');
+   location.href='mailto:08fatkar007@gmail.com?subject='+encodeURIComponent('Сообщение с сайта от '+n)+'&body='+encodeURIComponent(t+'\n\nОтвет отправить на: '+m);
+  });
+ }
 })();
 </script>
 </body>
