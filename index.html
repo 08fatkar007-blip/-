@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Карим Фатхутдинов — сайты для небольшого бизнеса</title>
+<meta name="description" content="Веб-разработчик-фрилансер: делаю понятные и быстрые сайты-визитки и лендинги для небольшого бизнеса.">
+<style>
+:root{--ink:#12303b;--paper:#eef3f4;--sea:#2a7f8e;--lemon:#f2c94c;--white:#fff;--line:#c9d6d9;--err:#b3261e}
+*{box-sizing:border-box}
+html{scroll-padding-top:72px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;margin:0 0 .6em}
+h1{font-size:clamp(2.1rem,5.5vw,3.6rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,3.4vw,2.2rem)}
+a{color:var(--sea)}
+:focus-visible{outline:3px solid var(--lemon);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+/* меню */
+header{position:sticky;top:0;z-index:10;background:var(--ink);color:var(--white)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:60px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none;font-family:Georgia,serif;font-weight:700}
+.logo svg{width:28px;height:28px}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:8px 14px;color:var(--white);text-decoration:none;border-radius:6px}
+nav a:hover{background:rgba(255,255,255,.14)}
+.burger{display:none;background:none;border:2px solid var(--white);color:var(--white);border-radius:6px;padding:6px 12px;font:inherit;cursor:pointer}
+/* главная */
+.hero{padding-top:56px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
+.hero p{font-size:1.15rem;max-width:34em}
+.btn{display:inline-block;background:var(--lemon);color:var(--ink);font-weight:700;padding:13px 24px;border-radius:8px;text-decoration:none;border:0;font-size:1rem;cursor:pointer;font-family:inherit}
+.btn:hover{background:#e6bb34}
+.photo{width:100%;max-width:380px;aspect-ratio:1;object-fit:cover;border-radius:24px 24px 24px 120px;background:var(--line);justify-self:end;display:block}
+/* обо мне */
+#about{background:var(--white)}
+#about .wrap{max-width:760px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none;margin:24px 0 0}
+.facts li{border:2px solid var(--ink);border-radius:999px;padding:4px 16px;font-size:.95rem}
+/* галерея */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin:0;padding:0}
+.gallery figure{margin:0;background:var(--white);border:2px solid var(--ink);border-radius:12px;overflow:hidden}
+.gallery svg{display:block;width:100%;height:auto}
+.gallery figcaption{padding:12px 16px;border-top:2px solid var(--ink)}
+.gallery strong{display:block}
+.gallery span{font-size:.92rem;color:#44606a}
+/* контакты */
+#contacts{background:var(--ink);color:var(--white)}
+#contacts a{color:var(--lemon)}
+#contacts .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
+.contact-list{list-style:none;padding:0;margin:0;font-size:1.1rem}
+.contact-list li{margin-bottom:10px}
+form{display:grid;gap:14px}
+label{display:grid;gap:6px;font-weight:600}
+input,textarea{font:inherit;padding:11px 13px;border-radius:8px;border:2px solid transparent;width:100%;color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+input[aria-invalid="true"]{border-color:#ff8a80}
+.msg{min-height:1.4em;margin:0;font-weight:600}
+.msg.error{color:#ffb4ab}
+.msg.ok{color:var(--lemon)}
+/* футер */
+footer{background:#0b1f27;color:#c5d3d7;padding:28px 0;font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+footer a{color:var(--white)}
+.social{display:flex;gap:12px;list-style:none;margin:0;padding:0}
+.social a{display:grid;place-items:center;width:40px;height:40px;border:2px solid #5d7a84;border-radius:50%}
+.social a:hover{border-color:var(--lemon)}
+.social svg{width:20px;height:20px;fill:var(--white)}
+/* адаптивность */
+@media (max-width:760px){
+ section{padding:48px 0}
+ .burger{display:block}
+ nav{position:absolute;left:0;right:0;top:100%;background:var(--ink);display:none;padding:8px 20px 16px}
+ nav.open{display:block}
+ nav ul{flex-direction:column}
+ .hero .wrap,#contacts .wrap,.gallery{grid-template-columns:1fr}
+ .photo{justify-self:start;max-width:280px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="m1" viewBox="0 0 320 200">
+   <rect width="320" height="200" fill="var(--bg)"/>
+   <rect width="320" height="22" fill="#12303b"/><circle cx="12" cy="11" r="4" fill="#f2c94c"/><circle cx="26" cy="11" r="4" fill="#fff" opacity=".6"/>
+   <rect x="20" y="52" width="130" height="16" rx="3" fill="var(--fg)"/><rect x="20" y="78" width="100" height="8" rx="3" fill="var(--fg)" opacity=".5"/><rect x="20" y="94" width="116" height="8" rx="3" fill="var(--fg)" opacity=".5"/>
+   <rect x="20" y="122" width="64" height="22" rx="5" fill="var(--ac)"/>
+   <rect x="180" y="40" width="120" height="130" rx="14" fill="var(--ac)"/><circle cx="240" cy="92" r="26" fill="var(--bg)" opacity=".85"/>
+  </symbol>
+  <symbol id="m2" viewBox="0 0 320 200">
+   <rect width="320" height="200" fill="var(--bg)"/>
+   <rect width="320" height="22" fill="#12303b"/><circle cx="12" cy="11" r="4" fill="#f2c94c"/><circle cx="26" cy="11" r="4" fill="#fff" opacity=".6"/>
+   <rect x="20" y="36" width="280" height="40" rx="6" fill="var(--fg)"/>
+   <rect x="20" y="90" width="84" height="84" rx="8" fill="var(--ac)"/><rect x="118" y="90" width="84" height="84" rx="8" fill="var(--ac)" opacity=".65"/><rect x="216" y="90" width="84" height="84" rx="8" fill="var(--ac)" opacity=".35"/>
+  </symbol>
+ </defs>
+</svg>
+
+<header>
+ <div class="wrap">
+  <a class="logo" href="#home" aria-label="Карим Фатхутдинов — на главную">
+   <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="4" width="28" height="22" rx="4" fill="none" stroke="#f2c94c" stroke-width="3"/><path d="M11 12l-4 4 4 4M21 12l4 4-4 4" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   Карим Фатхутдинов
+  </a>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu">Меню</button>
+  <nav id="menu" aria-label="Основное меню">
+   <ul>
+    <li><a href="#home">Главная</a></li>
+    <li><a href="#about">Обо мне</a></li>
+    <li><a href="#portfolio">Портфолио</a></li>
+    <li><a href="#contacts">Контакты</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+ <div class="wrap">
+  <div>
+   <h1>Сайт, который открывается с телефона и сразу понятен</h1>
+   <p>Делаю сайты-визитки и лендинги для кофеен, мастерских и небольших команд. Без лишних блоков: кто вы, что предлагаете и как с вами связаться.</p>
+   <a class="btn" href="#contacts">Обсудить сайт</a>
+  </div>
+  <img class="photo" id="photo" src="photo.jpg" alt="Фотография автора сайта" width="380" height="380">
+ </div>
+</section>
+
+<section id="about">
+ <div class="wrap">
+  <h2>Обо мне</h2>
+  <p>Я учусь на первом курсе и занимаюсь веб-разработкой: вручную верстаю страницы на HTML и CSS, добавляю небольшие скрипты и проверяю, как сайт выглядит на телефоне и на компьютере. Конструкторы вроде Tilda помогают быстро набросать структуру, но готовый шаблон я всегда переделываю: меняю тексты, сетку и цвета, чтобы страница не была похожа на сотни других.</p>
+  <p>Мне важно, чтобы посетитель за несколько секунд понял, чем вы занимаетесь, и мог позвонить или написать одним нажатием. Поэтому я пишу короткие тексты, оптимизирую картинки и проверяю форму обратной связи до публикации.</p>
+  <ul class="facts">
+   <li>HTML и CSS</li><li>Адаптивная вёрстка</li><li>Основы JavaScript</li><li>Работа с Docker</li>
+  </ul>
+ </div>
+</section>
+
+<section id="portfolio">
+ <div class="wrap">
+  <h2>Портфолио</h2>
+  <p>Учебные макеты: на них я отрабатываю сетку, цвета и мобильную версию.</p>
+  <div class="gallery">
+   <figure><svg viewBox="0 0 320 200" role="img" aria-label="Макет сайта кофейни" style="--bg:#f6e7d3;--fg:#4a2c1a;--ac:#b5651d"><use href="#m1"/></svg><figcaption><strong>Кофейня «Зерно»</strong><span>Лендинг с меню и картой проезда</span></figcaption></figure>
+   <figure><svg viewBox="0 0 320 200" role="img" aria-label="Макет сайта мастерской по ремонту техники" style="--bg:#dcecf0;--fg:#12303b;--ac:#2a7f8e"><use href="#m2"/></svg><figcaption><strong>Ремонт техники</strong><span>Услуги и цены в виде карточек</span></figcaption></figure>
+   <figure><svg viewBox="0 0 320 200" role="img" aria-label="Макет портфолио фотографа" style="--bg:#e6e3f3;--fg:#2b2358;--ac:#6a5acd"><use href="#m2"/></svg><figcaption><strong>Портфолио фотографа</strong><span>Галерея работ на CSS Grid</span></figcaption></figure>
+   <figure><svg viewBox="0 0 320 200" role="img" aria-label="Макет сайта учебной группы" style="--bg:#e3f1dc;--fg:#1f4a1a;--ac:#4c9a2a"><use href="#m1"/></svg><figcaption><strong>Учебная группа</strong><span>Расписание и новости группы</span></figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section id="contacts">
+ <div class="wrap">
+  <div>
+   <h2>Контакты</h2>
+   <p>Напишите, какой сайт нужен, и я отвечу в течение дня.</p>
+   <ul class="contact-list">
+    <li>Телефон: <a href="tel:+79655954655">+7 (965) 595-46-55</a></li>
+    <li>Почта: <a href="mailto:08fatkar007@gmail.com">08fatkar007@gmail.com</a></li>
+   </ul>
+  </div>
+  <form id="form" novalidate>
+   <label>Имя <input type="text" id="name" name="name" autocomplete="name" required></label>
+   <label>Email <input type="email" id="email" name="email" autocomplete="email" required></label>
+   <label>Сообщение <textarea id="text" name="message" required></textarea></label>
+   <button class="btn" type="submit">Отправить сообщение</button>
+   <p class="msg" id="msg" role="status" aria-live="polite"></p>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div>© 2026 Карим Фатхутдинов. Сайт создан в 2026 году.<br>
+   <a href="tel:+79655954655">+7 (965) 595-46-55</a> · <a href="mailto:08fatkar007@gmail.com">08fatkar007@gmail.com</a></div>
+  <ul class="social">
+   <li><a href="https://t.me/p1romo" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.5 3.5L2.8 10.7c-.9.4-.9 1.1-.2 1.3l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.3 4.7 3.5c.9.5 1.5.2 1.7-.8L22.8 4.9c.3-1.3-.5-1.9-1.3-1.4zM8.6 13.2l9.7-6.1c.5-.3.9-.1.5.2l-8.1 7.3-.3 3.4-1.8-4.8z"/></svg></a></li>
+   <li><a href="https://github.com/username" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 016 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.100.8 2.200v3.300c0 .3.2.7.8.6A11.500 11.500 0 0023.500 12C23.500 5.700 18.300.5 12 .5z"/></svg></a></li>
+   <li><a href="https://vk.com/username" aria-label="ВКонтакте"><svg viewBox="0 0 24 24"><path d="M12.8 18.5C6.400 18.500 2.700 14.100 2.500 6.800h3.200c.1 5.400 2.500 7.700 4.400 8.200V6.800h3v4.700c1.900-.2 3.800-2.300 4.500-4.700h3c-.5 2.900-2.600 5-4.100 5.900 1.500.7 3.900 2.500 4.800 5.800h-3.300c-.7-2.200-2.400-3.900-4.900-4.100v4.100h-.4z"/></svg></a></li>
+  </ul>
+ </div>
+</footer>
+
+<script>
+(function(){
+ // запасная картинка, пока не добавлен photo.jpg
+ var img=document.getElementById('photo');
+ img.onerror=function(){img.onerror=null;
+  img.src='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 380"><rect width="380" height="380" fill="#c9d6d9"/><circle cx="190" cy="150" r="62" fill="#2a7f8e"/><path d="M60 380c0-80 60-125 130-125s130 45 130 125z" fill="#12303b"/></svg>');};
+ // мобильное меню
+ var btn=document.querySelector('.burger'),nav=document.getElementById('menu');
+ btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
+ nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
+ // форма: проверка email и отправка через почтовую программу
+ var f=document.getElementById('form'),msg=document.getElementById('msg');
+ function show(t,c){msg.textContent=t;msg.className='msg '+c;}
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=f.name.value.trim(),m=f.email.value.trim(),t=f.message.value.trim();
+  [f.name,f.email,f.message].forEach(function(x){x.removeAttribute('aria-invalid');});
+  if(!n){f.name.setAttribute('aria-invalid','true');f.name.focus();return show('Введите ваше имя.','error');}
+  if(m.indexOf('@')<1||m.indexOf('@')===m.length-1){f.email.setAttribute('aria-invalid','true');f.email.focus();return show('Email должен содержать символ @, например name@mail.ru.','error');}
+  if(!t){f.message.setAttribute('aria-invalid','true');f.message.focus();return show('Напишите сообщение.','error');}
+  show('Готово, открываю почтовую программу с вашим сообщением.','ok');
+  location.href='mailto:08fatkar007@gmail.com?subject='+encodeURIComponent('Сообщение с сайта от '+n)+'&body='+encodeURIComponent(t+'\n\nОтвет отправить на: '+m);
+ });
+})();
+</script>
+</body>
+</html>
